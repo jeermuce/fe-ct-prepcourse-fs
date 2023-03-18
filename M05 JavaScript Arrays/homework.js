@@ -63,8 +63,8 @@ function agregarNumeros(arrayOfNums) {
   // Suma todos los elementos y retorna el resultado.
   // Tu código:
   let suma = 0;
-  for (let i = 0; i < arrayOfNums.length; i++) {
-    suma += arrayOfNums[i];
+  for (let número of arrayOfNums) {
+    suma += número;
   }
   return suma;
 }
@@ -75,26 +75,24 @@ function promedioResultadosTest(resultadosTest) {
   // Tu código:
   let promedio = 0;
   let suma = 0;
-  for (let i = 0; i < resultadosTest.length; i++) {
-    suma += resultadosTest[i];
+  for (let resultado of resultadosTest) {
+    suma += resultado;
   }
   promedio = suma / resultadosTest.length;
   return promedio;
 }
-
 function numeroMasGrande(arrayOfNums) {
   // El parámetro "arrayOfNums" es un arreglo de números.
   // Retornar el número más grande.
   // Tu código:
   var mayor = arrayOfNums[0];
-  for (let i in arrayOfNums) {
-    if (mayor < arrayOfNums[i]) {
-      mayor = arrayOfNums[i];
+  for (let num of arrayOfNums) {
+    if (mayor < num) {
+      mayor = num;
     }
   }
   return mayor;
 }
-
 function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto.
   // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
@@ -151,8 +149,8 @@ function todosIguales(array) {
   // Si todos los elementos del arreglo son iguales, retornar true.
   // Caso contrario retornar false.
   // Tu código:
-  for (let i in array) {
-    if (array[i] != array[1]) {
+  for (let element of array) {
+    if (element != array[1]) {
       return false;
     }
   }
@@ -165,13 +163,10 @@ function mesesDelAño(array) {
   // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
   // Tu código:
   let resultados = [];
-  for (let i in array) {
-    if (
-      array[i] === "Enero" ||
-      array[i] === "Marzo" ||
-      array[i] === "Noviembre"
-    ) {
-      resultados.push(array[i]);
+  let search_terms = ["Enero", "Marzo", "Noviembre"];
+  for (let mes of array) {
+    if (search_terms.includes(mes)) {
+      resultados.push(mes);
     }
   }
   if (resultados.length === 3) {
@@ -180,7 +175,6 @@ function mesesDelAño(array) {
     return "No se encontraron los meses pedidos";
   }
 }
-
 function tablaDelSeis() {
   // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
